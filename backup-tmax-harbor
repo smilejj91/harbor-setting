@@ -1,0 +1,9 @@
+#!/bin/bash
+
+DATETIME=$(date +%Y_%m_%d)
+PASSWORD="abcd"
+REMOTE_STORAGE="x.x.x.x"
+
+mkdir -p /home/share/backup
+tar -zcvf /home/share/backup/tmax-harbor_${DATETIME}.tar.gz /data
+sshpass -p ${PASSWORD} scp -r /home/share/backup/tmax-harbor_${DATETIME}.tar.gz root@${REMOTE_STORAGE}:/home/share/backup/

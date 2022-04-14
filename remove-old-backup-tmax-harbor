@@ -1,0 +1,3 @@
+#!/bin/bash
+
+find /home/share/backup/ -name "tmax-harbor*.tar.gz" -ctime 2 -exec rm -rf '{}' \;
